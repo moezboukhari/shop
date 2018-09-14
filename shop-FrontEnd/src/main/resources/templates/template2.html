@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<link rel="stylesheet" type="text/css"
+	href="../static//assets/css/bootstrap.min.css"
+	th:href="@{/assets/css/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css"
+	href="../static/assets/css/myStyle.css"
+	th:href="@{/assets/css/myStyle.css}" />
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="Moez Boukhari" />
+</head>
+<body>
+
+
+	<header>
+		<!-- Navigation -->
+		<nav class="navbar navbar-expand-md  navbar-light bg-secondary">
+			<div class="container">
+				<a class="navbar-brand" th:href="@{/}">Accueil</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarResponsive" aria-controls="navbarResponsive"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active"><a class="nav-link" th:href="@{/home}">Home
+								<span class="sr-only">(current)</span>
+						</a></li>
+						<li class="nav-item"><a class="nav-link" th:href="@{/about}">About</a></li>
+						<li class="nav-item"><a class="nav-link" th:href="@{/products}">Liste Products</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" th:href="@{/contact}">Contact</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<section layout:fragment="cont"></section>
+	<!-- Footer -->
+	<footer class="card-footer text-muted">
+		
+			<p class="m-0 text-center text-dark">Copyright &copy; Shopping
+				on line.</p>
+		
+		<!-- /.container -->
+	</footer>
+	<script src="../static/assets/js/jquery.js}" th:src="@{/assets/js/jquery.js}"></script>
+<script src="../static/assets/js/bootstrap.min.js}" th:src="@{/assets/js/bootstrap.min.js}"></script>
+	 
+
+</body>
+</html>
