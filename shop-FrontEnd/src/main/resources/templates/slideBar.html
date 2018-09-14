@@ -1,0 +1,6 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<h1 class="my-4">Shop Name</h1>
+<div class="list-group" th:each="c:${categories}">
+	<a th:href="@{'/show/category/' + ${c.id} + '/products'}" class="list-group-item" th:text="${c.name}"></a> 
+</div>
+</html>

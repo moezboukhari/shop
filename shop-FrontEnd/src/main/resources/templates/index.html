@@ -2,36 +2,35 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorator="template2">
-  <head>
+<head>
 
 
-    <title th:text="${title}"></title>
+<title th:text="${title}"></title>
 
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <!-- Navigation -->
-      <!-- Page Content -->
-<div layout:fragment="cont" class="container" >
-<div th:if="${userClickHome=='true'}">
- <div  th:insert="@{/home}" ></div>
-</div>
+	<!-- Navigation -->
+	<!-- Page Content -->
+	<div layout:fragment="cont" class="container">
+		<div th:if="${userClickHome=='true'}">
+			<div th:insert="@{/home}"></div>
+		</div>
 
-<div th:if="${userClickAbout=='true'}">
- <div  th:insert="@{/about}" ></div>
-</div>
-<div th:if="${userClickContact=='true'}">
- <div  th:insert="@{/contact}" ></div>
- 
-</div>
-    </div>
-    <!-- /.container -->
-         
+		<div th:if="${userClickAbout=='true'}">
+			<div th:insert="@{/about}"></div>
+		</div>
+		<div th:if="${userClickContact=='true'}">
+			<div th:insert="@{/contact}"></div>
 
-   
+		</div>
 
-
-  </body>
+		<div th:if="${userClickProducts=='true' or userClickCategProducts=='true'}">
+			<div th:insert="@{/products}"></div>
+		</div>
+		<!-- /.container -->
+		</div>
+</body>
 
 </html>
