@@ -28,7 +28,7 @@ public class PageController {
 
 	@RequestMapping(value = {"/contact"},method=RequestMethod.GET)
 	public String contact(Model model) {
-		model.addAttribute("title", "contact Shop");
+		model.addAttribute("title", "Contact Shop");
 		model.addAttribute("userClickContact", "true");
 		return "index";
 		

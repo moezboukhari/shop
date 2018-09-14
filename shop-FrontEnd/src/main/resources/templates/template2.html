@@ -2,9 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
+<title th:text="${title}"></title>
 <link rel="stylesheet" type="text/css"
 	href="../static//assets/css/bootstrap.min.css"
 	th:href="@{/assets/css/bootstrap.min.css}" />
+	<link rel="stylesheet" type="text/css"
+	href="../static//assets/css/bootswatch.css"
+	th:href="@{/assets/css/bootswatch.css}" />
 <link rel="stylesheet" type="text/css"
 	href="../static/assets/css/myStyle.css"
 	th:href="@{/assets/css/myStyle.css}" />
@@ -13,6 +17,10 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="Moez Boukhari" />
+
+<script>
+	window.menu = '${title}';
+</script>
 </head>
 <body>
 
@@ -29,32 +37,44 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarResponsive">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item active"><a class="nav-link" th:href="@{/home}">Home
-								<span class="sr-only">(current)</span>
+						<li id="home" class="nav-item active"><a class="nav-link"
+							th:href="@{/home}">Home <span class="sr-only">(current)</span>
 						</a></li>
-						<li class="nav-item"><a class="nav-link" th:href="@{/about}">About</a></li>
-						<li class="nav-item"><a class="nav-link" th:href="@{/products}">Liste Products</a>
-						</li>
-						<li class="nav-item"><a class="nav-link" th:href="@{/contact}">Contact</a>
-						</li>
+						<li id="about" class="nav-item"><a id="about"
+							class="nav-link" th:href="@{/about}">About</a></li>
+						<li id="products" class="nav-item"><a id="products"
+							class="nav-link" th:href="@{/products}">Liste Products</a></li>
+						<li id="contact" class="nav-item"><a id="contact"
+							class="nav-link" th:href="@{/contact}">Contact</a></li>
 					</ul>
 				</div>
 			</div>
 		</nav>
 	</header>
+	<div id="wrap">
+		<div id="main" class="container clear-top">
+			<section layout:fragment="cont"></section>
+		</div>
+	</div>
 
-	<section layout:fragment="cont"></section>
 	<!-- Footer -->
-	<footer class="card-footer text-muted">
-		
-			<p class="m-0 text-center text-dark">Copyright &copy; Shopping
-				on line.</p>
-		
+	
+	<footer class=" card-footer text-muted ">
+<nav class="navbar-fixed-bottom">
+		<p class="m-0 text-center text-dark">Copyright &copy; Shopping on
+			line.</p>
+
 		<!-- /.container -->
+		</nav>
 	</footer>
-	<script src="../static/assets/js/jquery.js}" th:src="@{/assets/js/jquery.js}"></script>
-<script src="../static/assets/js/bootstrap.min.js}" th:src="@{/assets/js/bootstrap.min.js}"></script>
-	 
+	
+	<script src="../static/assets/js/jquery.js}"
+		th:src="@{/assets/js/jquery.js}"></script>
+	<script src="../static/assets/js/bootstrap.min.js}"
+		th:src="@{/assets/js/bootstrap.min.js}"></script>
+
+	<script src="../static/assets/js/myScript.js}"
+		th:src="@{/assets/js/myScript.js}"></script>
 
 </body>
 </html>
