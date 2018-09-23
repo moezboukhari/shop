@@ -3,24 +3,32 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 <title th:text="${title}"></title>
+
+
+
 <link rel="stylesheet" type="text/css"
+	href="../static//assets/css/dataTables.bootstrap.css"
+	th:href="@{/assets/css/dataTables.bootstrap.css}" />
+	
+<link rel="stylesheet" type="text/css"
+	href="../static//assets/css/jquery.dataTables.css"
+	th:href="@{/assets/css/jquery.dataTables.css}" />
+	<link rel="stylesheet" type="text/css"
 	href="../static//assets/css/bootstrap.min.css"
 	th:href="@{/assets/css/bootstrap.min.css}" />
-	<link rel="stylesheet" type="text/css"
+		<link rel="stylesheet" type="text/css"
 	href="../static/assets/css/bootswatch.css"
 	th:href="@{/assets/css/bootswatch.css}" />
-<link rel="stylesheet" type="text/css"
+	<link rel="stylesheet" type="text/css"
 	href="../static/assets/css/myStyle.css"
 	th:href="@{/assets/css/myStyle.css}" />
+	
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="Moez Boukhari" />
 
-<script>
-	window.menu = '${title}';
-</script>
 </head>
 <body>
 
@@ -37,7 +45,7 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarResponsive">
 					<ul class="navbar-nav ml-auto">
-						<li id="home" class="nav-item active"><a class="nav-link"
+						<li id="home" class="nav-item"><a class="nav-link"
 							th:href="@{/home}">Home <span class="sr-only">(current)</span>
 						</a></li>
 						<li id="about" class="nav-item"><a id="about"
@@ -67,13 +75,18 @@
 		<!-- /.container -->
 		</nav>
 	</footer>
-	
-	<script src="../static/assets/js/jquery.js}"
+	<script src="../static/assets/js/jquery.js"
 		th:src="@{/assets/js/jquery.js}"></script>
-	<script src="../static/assets/js/bootstrap.min.js}"
+		
+		<script src="../static/assets/js/bootstrap.min.js"
 		th:src="@{/assets/js/bootstrap.min.js}"></script>
-
-	<script src="../static/assets/js/myScript.js}"
+		
+		
+<script src="../static/assets/js/jquery.dataTables.js"
+		th:src="@{/assets/js/jquery.dataTables.js}"></script>
+	
+	
+	<script src="../static/assets/js/myScript.js"
 		th:src="@{/assets/js/myScript.js}"></script>
 
 </body>

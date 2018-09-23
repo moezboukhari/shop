@@ -11,6 +11,7 @@
 
 <body>
 
+
 	<!-- Navigation -->
 	<!-- Page Content -->
 	<div layout:fragment="cont" class="container">
@@ -25,12 +26,33 @@
 			<div th:insert="@{/contact}"></div>
 
 		</div>
-
-		<div th:if="${userClickProducts=='true' or userClickCategProducts=='true'}">
+		<script th:inline="javascript">
+					/*<![CDATA[*/
+					
+					    window.categoryId =null ;
+					
+					
+					/*]]>*/
+</script>
+		<div th:if="${userClickProducts=='true'}">
 			<div th:insert="@{/products}"></div>
 		</div>
 		<!-- /.container -->
-		</div>
+	
+
+	<div th:if="${userClickCategProducts=='true'}">
+		<script th:inline="javascript">
+					/*<![CDATA[*/
+					
+					    window.categoryId = /*[[${category.id}]]*/ ;
+					
+					
+					/*]]>*/
+          </script>
+		<div th:insert="@{/products}"></div>
+	</div>
+	<!-- /.container -->
+	</div>
 </body>
 
 </html>

@@ -2,10 +2,11 @@ package org.sid.shopFrontEnd.controller;
 
 
 import java.util.List;
-import java.util.Optional;
 
 import org.sid.shopBackEnd.dao.CategoryDao;
+import org.sid.shopBackEnd.dao.ProductRepository;
 import org.sid.shopBackEnd.dto.Category;
+import org.sid.shopBackEnd.dto.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
@@ -19,11 +20,13 @@ public class PageController {
 	
 	@Autowired
 	CategoryDao categoryRepository;
+	@Autowired
+	private ProductRepository productRepository;
+
 	
 	@RequestMapping(value = {"/","/index","/home"},method=RequestMethod.GET)
 	public String index(Model model) {
 		List<Category> categories = categoryRepository.findAll();
-		
 		model.addAttribute("title", "Home Shop");
 		model.addAttribute("userClickHome", "true");
 		model.addAttribute("categories", categories);
@@ -34,7 +37,8 @@ public class PageController {
 	@RequestMapping(value = {"/show/all/products","/products"},method=RequestMethod.GET)
 	public String products(Model model) {
 		List<Category> categories = categoryRepository.findAll();
-		
+		List<Product> products = productRepository.findAll();
+		model.addAttribute("products", products);
 		model.addAttribute("title", "All Products");
 		model.addAttribute("userClickProducts", "true");
 		model.addAttribute("categories", categories);
