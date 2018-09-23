@@ -14,11 +14,9 @@ public class ShopFrontEndApplication {
 	
 	@Autowired
 	public static  CategoryDao categoryDao;
-	
 	public static void main(String[] args) {
 		 ConfigurableApplicationContext ctx =  SpringApplication.run(ShopFrontEndApplication.class, args);
 		 categoryDao = ctx.getBean(CategoryDao.class);
-	    
 //         categoryDao.save(new Category(null,"Television","this is some description for television","CAT_1.png",true));
 //         categoryDao.save(new Category(null,"Laptop","this is some description for Laptop","CAT_2.png",true));
 //         categoryDao.save(new Category(null,"Telephone","this is some description for telephone","CAT_3.png",true));
