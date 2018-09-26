@@ -1,4 +1,5 @@
 /**
+unstyle started bootsrap template https://startbootstrap.com/template-categories/unstyled/
  * 
  */
 
@@ -20,7 +21,7 @@ $(function() {
 	}
 });
 var path = '/json/data/all/products';
-//console.log(window.categoryId)
+console.log(window.rootContext)
 if (window.categoryId !=null) {
 	path = '/json/data/category/'+ window.categoryId + '/products'
 }
@@ -36,16 +37,34 @@ $(document).ready( function () {
     	},
     columns: [
     	{
-    		data: 'id'
-    	},
-    	{
-    		data: 'code'
+    		data: 'code',
+    			mRender: function(data, type, row) {
+    				return '<img src="'+window.rootContext+'/img1.jpg" class="datatableimg" />';
+    			}
     	},
     	{
     		data: 'name'
     	},
+    	
     	{
-    		data: 'views'
+    		data: 'brand'
+    	},
+    	{
+    		data: 'unitPrice' ,
+    		mRender: function(data, type, row) {
+    				return '&#8364;' + data
+    			}
+    	},
+    	{
+    		data: 'quantity'
+    	},
+    	{
+    		data: 'id',
+    			mRender: function(data, type, row) {
+    				var str = '<a href="/show/'+data+'/product" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open">View</span></a> &#160;';
+    				str+=  '<a href="/add/'+data+'/product" class="btn btn-outline-primary"><span class="glyphicon glyphicon-shoping-cart">add</span></a>';
+    				return str;
+    			}
     	}
     ]
     });

@@ -3,19 +3,26 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 <title th:text="${title}"></title>
-
+<script th:inline="javascript">
+					/*<![CDATA[*/
+					
+					    window.rootContext =/*[[@{/assets/images}]]*/ ;
+					
+					
+					/*]]>*/
+</script>
 
 
 <link rel="stylesheet" type="text/css"
 	href="../static//assets/css/dataTables.bootstrap.css"
 	th:href="@{/assets/css/dataTables.bootstrap.css}" />
-	
-<link rel="stylesheet" type="text/css"
-	href="../static//assets/css/jquery.dataTables.css"
-	th:href="@{/assets/css/jquery.dataTables.css}" />
 	<link rel="stylesheet" type="text/css"
 	href="../static//assets/css/bootstrap.min.css"
 	th:href="@{/assets/css/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css"
+	href="../static//assets/css/jquery.dataTables.css"
+	th:href="@{/assets/css/jquery.dataTables.css}" />
+	
 		<link rel="stylesheet" type="text/css"
 	href="../static/assets/css/bootswatch.css"
 	th:href="@{/assets/css/bootswatch.css}" />

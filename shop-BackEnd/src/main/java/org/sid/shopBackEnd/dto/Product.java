@@ -21,7 +21,8 @@ public class Product {
 	private String code;
 	private String name;
 	private String brand;
-	@JsonIgnore String description;
+	@JsonIgnore 
+	private String description;
 	@Column(name = "unit_price")
 	private double unitPrice;
 	private int quantity;
