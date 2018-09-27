@@ -1,0 +1,45 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div class="container">
+
+	<!-- breadcrumb -->
+	<div class="col-lg-12">
+		<ol class="breadcrumb" th:if="${userClickProduct=='true'}">
+			<li><a th:href="@{/home}">Home </a></li>
+			<li class='active'>/ Show All Products</li>
+			<li class='active' th:text="${' / '+product.name}"></li>
+		</ol>
+
+	</div>
+	<div class="row">
+		<!-- display image -->
+		<div class="col-xs-12 col-sm-4">
+			<div class="container">
+				<img th:src="@{/assets/images/img1.jpg}" class="img-thumbnail"  />
+			</div>
+		</div>
+		<!-- display description -->
+		<div class="col-xs-12 col-sm-8">
+			<h3 th:text="${product.name}"></h3>
+			<hr />
+			<p th:text="${product.description}"></p>
+			<hr />
+			<h4 th:text="${'price : &#8364;'+product.unitPrice}"></h4>
+			<hr />
+			<div th:if="${product.quantity>0}">
+			<h6 th:text="${'Quantity Avalaible : ' +product.quantity}"></h6>
+			</div>
+			<div th:if="${product.quantity==0}">
+			<h6>fin stock</h6>
+			</div>
+			<hr />
+<a th:href="@{'/add/'+ ${product.id} +'/product'}" class="btn btn-outline-success" 
+th:classappend="${product.quantity==0 ? 'disabled' : 'active'}">
+<span class="glyphicon glyphicon-shoping-cart">add to cart</span></a>	
+&#160;	
+<a th:href="@{/show/all/products}" class="btn btn-outline-secondary" >
+<span class="glyphicon glyphicon-shoping-cart">Back</span></a>		
+</div>
+
+	</div>
+</div>
+</html>

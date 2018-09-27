@@ -38,7 +38,9 @@
 			<div th:insert="@{/products}"></div>
 		</div>
 		<!-- /.container -->
-	
+	<div th:if="${userClickProduct=='true'}">
+			<div th:insert="@{/product}"></div>
+		</div>
 
 	<div th:if="${userClickCategProducts=='true'}">
 		<script th:inline="javascript">
