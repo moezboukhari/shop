@@ -3,13 +3,19 @@ package org.sid.shopFrontEnd;
 import org.sid.shopBackEnd.dao.CategoryDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration;
 import org.springframework.context.ConfigurableApplicationContext;
 
 //@ComponentScan({"org.sid.shopBackEnd.dao","org.sid.shopBackEnd"})
 
 @SpringBootApplication
+
 public class ShopFrontEndApplication {
+	
+	 
+	
 	
 	@Autowired
 	public static  CategoryDao categoryDao;

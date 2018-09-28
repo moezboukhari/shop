@@ -68,14 +68,14 @@ $(document).ready( function () {
     		data: 'id',
     			mRender: function(data, type, row) {
     				var str = '';
-    				str+='<a href="/show/'+data+'/product" class="btn btn-outline-primary"><span class="glyphicon glyphicon-eye-open">View</span></a> &#160;';
+    				str+='<a href="/show/'+data+'/product" class="btn btn-outline-primary"><span class="glyphicon glyphicon-eye-open"></span></a> &#160;';
 
     				if (row.quantity<1) {
-        				str+=  '<a href="javascript:void(0)" class="btn btn-outline-success disabled"><span class="glyphicon glyphicon-shoping-cart"><strike>add</strike></span></a>';
+        				str+=  '<a href="javascript:void(0)" class="btn btn-outline-success disabled"><strike><span class="glyphicon glyphicon-shopping-cart"></strike></span></a>';
 
     				}
     				else {
-        				str+=  '<a href="/add/'+data+'/product" class="btn btn-outline-success active"><span class="glyphicon glyphicon-shoping-cart">add</span></a>';
+        				str+=  '<a href="/add/'+data+'/product" class="btn btn-outline-success active"><span class="glyphicon glyphicon-shopping-cart"></span></a>';
 
     				}
     				return str;

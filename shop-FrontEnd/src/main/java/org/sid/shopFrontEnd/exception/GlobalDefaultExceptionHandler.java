@@ -1,15 +1,14 @@
 package org.sid.shopFrontEnd.exception;
 
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.NoHandlerFoundException;
-@ComponentScan({"org.sid.shopBackEnd","org.sid.shopFrontEnd"})
+//@ComponentScan({"org.sid.shopBackEnd","org.sid.shopFrontEnd"})
 @ControllerAdvice
-@Configuration
-public class GlobalDefaultExceptionHandler {
+public class GlobalDefaultExceptionHandler implements ErrorController{
 	@ExceptionHandler(NoHandlerFoundException.class)
 	public ModelAndView handlerNoHandlerFoundException() {
 		ModelAndView model = new ModelAndView("error");
@@ -19,5 +18,9 @@ public class GlobalDefaultExceptionHandler {
 
 		return model;
 		}
-
+	@Override
+	public String getErrorPath() {
+		// TODO Auto-generated method stub
+		return "/error";
+	}
 }
