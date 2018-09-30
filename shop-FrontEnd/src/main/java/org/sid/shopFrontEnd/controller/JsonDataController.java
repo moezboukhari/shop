@@ -20,11 +20,16 @@ public class JsonDataController {
 	@GetMapping("/all/products")
 	@ResponseBody
 	public List<Product> getAllProducts() {
+		return productRepository.findByIs_active(true);
+	}
+	@GetMapping("admin/all/products")
+	@ResponseBody
+	public List<Product> getAdminAllProducts() {
 		return productRepository.findAll();
 	}
 	@GetMapping("/category/{id}/products")
 	@ResponseBody
 	public List<Product> getAllProductsByCategory(@PathVariable Long id) {
-		return productRepository.findByCategory_id(id);
+		return productRepository.findByCategory_id(id,true);
 	}
 }

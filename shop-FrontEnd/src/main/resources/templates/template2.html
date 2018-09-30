@@ -6,7 +6,7 @@
 <script th:inline="javascript">
 					/*<![CDATA[*/
 					
-					    window.rootContext =/*[[@{/assets/images}]]*/ ;
+					    window.rootContext =/*[[@{/}]]*/ ;
 					
 					
 					/*]]>*/
@@ -42,25 +42,28 @@
 
 	<header>
 		<!-- Navigation -->
-		<nav class="navbar navbar-expand-md  navbar-light bg-secondary">
+		<nav class="navbar navbar-expand-md  navbar-light bg-light">
 			<div class="container">
-				<a class="navbar-brand" th:href="@{/}">Accueil</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse"
+				<a class="navbar-brand btn btn-outline-light" th:href="@{/}">Accueil</a>
+				<button class="navbar-toggler " type="button" data-toggle="collapse"
 					data-target="#navbarResponsive" aria-controls="navbarResponsive"
 					aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarResponsive">
 					<ul class="navbar-nav ml-auto">
-						<li id="home" class="nav-item"><a class="nav-link"
+						<li id="home" class="nav-item"><a class="nav-link btn btn-outline-light"
 							th:href="@{/home}">Home <span class="sr-only">(current)</span>
 						</a></li>
 						<li id="about" class="nav-item"><a id="about"
-							class="nav-link" th:href="@{/about}">About</a></li>
+							class="nav-link btn btn-outline-light" th:href="@{/about}">About</a></li>
 						<li id="products" class="nav-item"><a id="products"
-							class="nav-link" th:href="@{/show/all/products}">Liste Products</a></li>
+							class="nav-link btn btn-outline-light" th:href="@{/show/all/products}">Liste Products</a></li>
+						<li id="manageProducts" class="nav-item"><a id="manageProducts"
+							class="nav-link btn btn-outline-light" th:href="@{/manage/products}">manage Products</a></li>
+						
 						<li id="contact" class="nav-item"><a id="contact"
-							class="nav-link" th:href="@{/contact}">Contact</a></li>
+							class="nav-link btn btn-outline-light" th:href="@{/contact}">Contact</a></li>
 					</ul>
 				</div>
 			</div>
@@ -92,7 +95,8 @@
 <script src="../static/assets/js/jquery.dataTables.js"
 		th:src="@{/assets/js/jquery.dataTables.js}"></script>
 	
-	
+	<script src="../static/assets/js/bootbox.min.js"
+		th:src="@{/assets/js/bootbox.min.js}"></script>
 	<script src="../static/assets/js/myScript.js"
 		th:src="@{/assets/js/myScript.js}"></script>
 

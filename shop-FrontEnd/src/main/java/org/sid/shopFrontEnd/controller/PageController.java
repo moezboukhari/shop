@@ -54,7 +54,7 @@ public class PageController  {
 	@RequestMapping(value = {"/show/all/products","/products"},method=RequestMethod.GET)
 	public String products(Model model) {
 		List<Category> categories = categoryRepository.findAll();
-		List<Product> products = productRepository.findAll();
+		List<Product> products = productRepository.findByIs_active(true);
 		model.addAttribute("products", products);
 		model.addAttribute("title", "All Products");
 		model.addAttribute("userClickProducts", "true");

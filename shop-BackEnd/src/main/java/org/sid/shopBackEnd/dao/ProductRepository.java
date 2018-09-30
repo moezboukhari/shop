@@ -12,8 +12,8 @@ import org.springframework.data.repository.query.Param;
 import java.lang.Long;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {
-	 @Query("select p from product p where p.category_id = :category_id")
-	List<Product> findByCategory_id(@Param(value="category_id") Long category_id);
+	 @Query("select p from product p where p.category_id = :category_id and p.active = :active")
+	List<Product> findByCategory_id(@Param(value="category_id") Long category_id,@Param(value = "active") boolean active);
 	
     @Query("select p from product p where p.active = :active")
 	List<Product> findByIs_active(@Param(value = "active") boolean active);
